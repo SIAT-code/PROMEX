@@ -2,7 +2,7 @@
 
 ## Overview
 
-PROMEX improves few-shot protein property prediction by combining a Mixture-of-Experts (MoE) structure with meta-learning. The pipeline consists of three stages:
+PROMEX improves few-shot protein downstream tasks by combining a Mixture-of-Experts (MoE) structure with meta-learning. The pipeline consists of three stages:
 
 1. **Cluster** — Fine-tune ESM-2 on cluster-partitioned source task datasets to obtain task-specific expert weights.
 2. **MetaDistill** — Assemble experts into a MoE teacher model (via `MixtureFFNDown`) and train with a MAML-style meta-learning objective on target tasks.
