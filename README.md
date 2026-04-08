@@ -48,7 +48,7 @@ Config files are organized as `config/<Task>/esm2-cluster<N>.yaml`. Key fields:
 
 ```yaml
 model:
-  model_py_path: saprot/saprot_regression_model   # or classification/ppi variant
+  model_py_path: saprot/saprot_regression_model   # or classification/ppi
   kwargs:
     config_path: /path/to/esm2_t33_650M_UR50D
   save_path: weights/<Task>/cluster<N>/esm2_t33_650M_UR50D.pt
@@ -65,17 +65,17 @@ Load Stage 1 expert weights into a grouped MoE structure and apply meta-learning
 
 ```bash
 cd 2_MetaDistill
-python scripts/training.py -c config/BetaLactamase/moe3/esm2-percent1.yaml
-python scripts/training.py -c config/RemoteHomology/moe3/esm2-percent5.yaml
+python scripts/training.py -c config/BetaLactamase/moe/esm2-percent1.yaml
+python scripts/training.py -c config/RemoteHomology/moe/esm2-percent5.yaml
 ```
 
-Config files are organized as `config/<Task>/<variant>/esm2-percent<N>.yaml`. Key fields:
+Config files are organized as `config/<Task>/moe/esm2-percent<N>.yaml`. Key fields:
 
 ```yaml
 model:
-  teacher_name: moe3
+  teacher_name: moe
   teacher_checkpoint: /path/to/stage1/teacher.pt
-  save_path: weights/<Task>/<variant>/esm2_t33_650M_UR50D.pt
+  save_path: weights/<Task>/moe/esm2_t33_650M_UR50D.pt
 
 dataset:
   iters: 128          # meta-learning iterations per epoch
@@ -96,15 +96,15 @@ Fine-tune the meta-distilled model on the target task under standard supervised 
 ```bash
 cd 3_Finetune
 python scripts/training.py -c config/BetaLactamase/moe/esm2-normal.yaml
-python scripts/training.py -c config/RemoteHomology/moe3/esm2-percent1.yaml
+python scripts/training.py -c config/RemoteHomology/moe/esm2-percent1.yaml
 ```
 
 Key fields:
 
 ```yaml
 model:
-  from_checkpoint: ../2_MetaDistill/weights/<Task>/<variant>/esm2_t33_650M_UR50D.pt
-  save_path: weights/<Task>/esm2/<variant>/esm2_t33_650M_UR50D.pt
+  from_checkpoint: ../2_MetaDistill/weights/<Task>/moe/esm2_t33_650M_UR50D.pt
+  save_path: weights/<Task>/esm2/moe/esm2_t33_650M_UR50D.pt
 
 Trainer:
   max_epochs: 50
