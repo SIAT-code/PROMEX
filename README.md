@@ -369,7 +369,3 @@ The experimental secretion-expression study used 111 heterologous proteins, with
 ## 📄 License
 
 This code is released under the MIT License. See `LICENSE` for details.
-
-## 📚 Citation
-
-If you use this code, please cite the PROMEX article.

@@ -133,5 +133,3 @@ The file-level artifact check runs in less than 1 second. Full training or repro
 ## 📄 License and Citation
 
 The code is released under the MIT License. See `LICENSE`.
-
-If you use this code or checkpoints, please cite the PROMEX article.
