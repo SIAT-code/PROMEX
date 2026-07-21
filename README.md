@@ -27,6 +27,7 @@ The prospective *Pichia pastoris* secretion-expression prediction workflow is pr
 | --- | --- |
 | Install and check required files | [`COMPUTE.md`](COMPUTE.md) |
 | Understand model artifacts and intended use | [`MODEL_CARD.md`](MODEL_CARD.md) |
+| Download all task model weights | [Google Drive weights folder](https://drive.google.com/drive/folders/13M4PvkqWQg_03aXeX7IobyM-paN9Y-wg?usp=sharing) |
 | Reproduce property experiments | `2_Property/*/run.sh` |
 | Reproduce FS-Mutant benchmark | `3_FsMutant/run.sh` |
 | Reproduce Pichia workflows | `4_Pichia_Pastoris/*/run.sh` |
@@ -95,6 +96,9 @@ Large files in this package include the ESM-2 weights and the pretrained PROMEX 
 ```text
 weights/pretrained/moe_teacher_pretrained_model.pt
 ```
+
+> [!NOTE]
+> All task-related model weights are available from the [PROMEX Google Drive weights folder](https://drive.google.com/drive/folders/13M4PvkqWQg_03aXeX7IobyM-paN9Y-wg?usp=sharing).
 
 ## ⚙️ Environment
 
