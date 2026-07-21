@@ -45,7 +45,6 @@ class SaprotRegressionModel(SaprotBaseModel):
     def initialize_metrics(self, stage):
         return {f"{stage}_loss": torchmetrics.MeanSquaredError(),
                 f"{stage}_spearman": torchmetrics.SpearmanCorrCoef(),
-                f"{stage}_R2": torchmetrics.R2Score(),
                 f"{stage}_pearson": torchmetrics.PearsonCorrCoef()}
     
     def forward(self, inputs, structure_info=None):
@@ -113,8 +112,7 @@ class SaprotRegressionModel(SaprotBaseModel):
         self.reset_metrics("test")
         #------------------------------ save test metrics mark -----------------------------------#
         self.train_state['test'].append({'epoch': self.epoch,
-                                         'test_loss': log_dict['test_loss'].item(), 'test_spearman': log_dict['test_spearman'].item(), \
-                                            'test_R2': log_dict['test_R2'].item(), 'test_pearson': log_dict['test_pearson'].item()})
+                                         'test_loss': log_dict['test_loss'].item(), 'test_spearman': log_dict['test_spearman'].item(), 'test_pearson': log_dict['test_pearson'].item()})
         if self.trainer.max_epochs > 0:
             with open(os.path.join(os.path.dirname(self.save_path), 'train_state.json'), 'w') as f:
                 json.dump(self.train_state, f, indent=4)
@@ -128,8 +126,7 @@ class SaprotRegressionModel(SaprotBaseModel):
         self.check_save_condition(log_dict["valid_loss"], mode="min")
         #------------------------------ save valid metrics mark -----------------------------------#
         self.train_state['valid'].append({'epoch': self.epoch + 1, 
-                                          'valid_loss': log_dict['valid_loss'].item(), 'valid_spearman': log_dict['valid_spearman'].item(), \
-                                            'valid_R2': log_dict['valid_R2'].item(), 'valid_pearson': log_dict['valid_pearson'].item()})
+                                          'valid_loss': log_dict['valid_loss'].item(), 'valid_spearman': log_dict['valid_spearman'].item(), 'valid_pearson': log_dict['valid_pearson'].item()})
         if self.trainer.max_epochs > 0:
             with open(os.path.join(os.path.dirname(self.save_path), 'train_state.json'), 'w') as f:
                 json.dump(self.train_state, f, indent=4)
