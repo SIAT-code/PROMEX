@@ -1,4 +1,4 @@
-# 🧬 PROMEX
+# 🧬 PROMEX: expert-routed meta-learning enables cumulative protein engineering from small data
 
 ![Python](https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.7%2Bcu128-EE4C2C?logo=pytorch&logoColor=white)
