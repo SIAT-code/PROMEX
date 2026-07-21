@@ -1,0 +1,21 @@
+{
+    "auxiliary_raw_data_dir": "./data/fewshot/round_2To3/substitutions/combinated_single_mutant/activity",
+    "auxiliary_data_path": "./data/fewshot/round_2To3/substitutions/combinated_single_mutant_activity_merged.pkl",
+    "target_raw_data_dir": "./data/Pichia-Pastoris/substitutions_round3/combinated_mutant",
+    "target_data_path": "./data/Pichia-Pastoris/substitutions_round3/combinated_mutant_merged.pkl",
+
+    "struc_seq_path": "data/struc_sq_72.csv",
+    "model_dir": {
+        "esm2": "../../weights/esm2_t33_650M_UR50D",
+        "promex": "../3_Finetune_Expression/weights/Pichia-Pastoris/train_indenpendent1_independent2_cv3/fold3/independent_test3-valid_loss/esm2_t33_650M_UR50D.pt"
+    },
+    "lora_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+    ],
+    "ckpt_dir": "checkpoints_round3_combinated_mutant",
+    "retr_dir": "retrieved_round3_combinated_mutant",
+    "pred_dir": "predictions_combinated_mutant"
+}

@@ -1,0 +1,6 @@
+n_samples,spearmanr_compound_multi,spearmanr_local_single,spearmanr_cross_single,ndcg_compound_multi,ndcg_local_single,ndcg_cross_single
+20,0.5184,0.7644,0.4215,0.8581,0.9363,0.7521
+40,0.6023,0.8451,0.4372,0.8702,0.9495,0.7378
+80,0.6968,0.8807,0.4570,0.8367,0.9380,0.7257
+160,0.7778,0.9108,0.5519,0.8078,0.9278,0.7516
+320,0.7961,0.9181,0.5487,0.8365,0.9238,0.7942

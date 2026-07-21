@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=2 python scripts/training.py -c config/MPB-EXP/adapt-normal.yaml

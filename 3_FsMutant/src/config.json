@@ -1,0 +1,18 @@
+{
+    "raw_data_dir": "data/fs-mutant",
+    "data_path": "data/merged.pkl",
+    "struc_seq_path": "data/struc_sq_72.csv",
+    "model_dir": {
+        "esm2": "../weights/esm2_t33_650M_UR50D"
+    },
+    "splits": [20, 40, 80, 160, 320],
+    "lora_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+    ],
+    "ckpt_dir": "checkpoints",
+    "retr_dir": "retrieved",
+    "pred_dir": "predictions"
+}

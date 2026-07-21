@@ -1,0 +1,34 @@
+name: promex
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10.20
+  - pip=24.0
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.7.0+cu128
+      - torchvision==0.22.0+cu128
+      - torchaudio==2.7.0+cu128
+      - transformers==4.28.0
+      - pytorch-lightning==1.8.3
+      - torchmetrics==0.9.3
+      - peft==0.13.0
+      - accelerate==0.34.2
+      - learn2learn==0.2.0
+      - lmdb==1.5.1
+      - easydict==1.13
+      - numpy==1.26.4
+      - pandas==2.2.3
+      - scikit-learn==1.4.2
+      - scipy==1.15.3
+      - biopython==1.84
+      - tqdm==4.69.0
+      - PyYAML==6.0.3
+      - tensorboardX==2.6.5
+      - wandb==0.28.1
+      - fire==0.7.1
+      - qpth==0.0.18
+      - gym==0.26.2
+      - tabulate==0.10.0
+      - safetensors==0.8.0
+      - requests==2.34.2

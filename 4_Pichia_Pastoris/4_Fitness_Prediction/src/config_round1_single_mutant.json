@@ -1,0 +1,21 @@
+{
+    "auxiliary_raw_data_dir": "./data/VenusMutHub/substitutions/single_mutant/activity",
+    "auxiliary_data_path": "./data/VenusMutHub/substitutions/single_mutant_activity_merged.pkl",
+    "target_raw_data_dir": "./data/Pichia-Pastoris/substitutions_round1/single_mutant/DeltaE",
+    "target_data_path": "./data/Pichia-Pastoris/substitutions_round1/single_mutant_DeltaE_merged.pkl",
+
+    "struc_seq_path": "data/struc_sq_72.csv",
+    "model_dir": {
+        "esm2": "../../weights/esm2_t33_650M_UR50D",
+        "promex": "../3_Finetune_Expression/weights/Pichia-Pastoris/train_indenpendent1_independent2_cv3/fold3/independent_test3-valid_loss/esm2_t33_650M_UR50D.pt"
+    },
+    "lora_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+    ],
+    "ckpt_dir": "checkpoints_round1_single_mutant",
+    "retr_dir": "retrieved_round1_single_mutant",
+    "pred_dir": "predictions_round1_single_mutant"
+}
